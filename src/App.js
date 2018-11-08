@@ -1,28 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import QuestionList from './components/QuestionList';
 import './App.css';
 
+const questions = require("./data.json");
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+	state = {
+		questions: questions,
+		selectedAnswers: [0, 0, 0]
+	}
+
+	handleAnswerChange = (questionId, event) => {
+		const newAnswers = this.state.selectedAnswers.map((currentValue, index) => {
+			return index === questionId ? parseInt(event.target.value) : currentValue
+		});
+
+		this.setState({
+			selectedAnswers: newAnswers
+		});
+	}
+
+	render() {
+		return (
+			<React.Fragment>
+				<QuestionList
+					questions = {this.state.questions}
+					selectedAnswers = {this.state.selectedAnswers}
+					handleAnswerChange = {this.handleAnswerChange}
+				/>
+			</React.Fragment>
+		);
+	}
 }
 
 export default App;

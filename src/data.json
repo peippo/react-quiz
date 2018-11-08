@@ -1,0 +1,55 @@
+[
+	{
+		"id": 0,
+		"question": "First question?",
+		"answers": [
+			{
+				"id": 0,
+				"answer": "Yes",
+				"points": 2
+			},
+			{
+				"id": 1,
+				"answer": "No",
+				"points": 0
+			}
+		]
+	},
+	{
+		"id": 1,
+		"question": "Second question?",
+		"answers": [
+			{
+				"id": 0,
+				"answer": "Yes",
+				"points": 2
+			},
+			{
+				"id": 1,
+				"answer": "Maybe",
+				"points": 1
+			},
+			{
+				"id": 2,
+				"answer": "No",
+				"points": 0
+			}
+		]
+	},
+	{
+		"id": 2,
+		"question": "Third question?",
+		"answers": [
+			{
+				"id": 0,
+				"answer": "Sure, why not",
+				"points": 5
+			},
+			{
+				"id": 1,
+				"answer": "I'd rather not",
+				"points": -2
+			}
+		]
+	}
+]
