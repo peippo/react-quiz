@@ -5,7 +5,7 @@ class AnswerList extends Component {
 
 	render() {
 		return (
-			<form>
+			<form className = "question__answers">
 				{
 					this.props.answers
 					.map((answer) => (

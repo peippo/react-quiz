@@ -3,15 +3,22 @@ import AnswerList from './AnswerList';
 
 class Question extends Component {
 	render() {
+		const isActiveQuestion = this.props.activeQuestion === this.props.questionId;
+		
 		return (
-			<div>
-				<h2 onClick = {() => this.props.handleQuestionChange(this.props.questionId)}>
+			<li 
+				className = {isActiveQuestion ? "question question--active" : "question"}
+				onClick = {() => this.props.handleQuestionChange(this.props.questionId)}
+			>
+				<h2 className = "question__title">
 					{this.props.shortTitle}
 				</h2>
 				{
-					this.props.activeQuestion === this.props.questionId &&
+					isActiveQuestion &&
 					<React.Fragment>
-						{this.props.questionText}
+						<h3 className = "question__heading">
+							{this.props.questionText}
+						</h3>
 						<AnswerList
 							answers = {this.props.answers}
 							questionId = {this.props.questionId}
@@ -20,7 +27,7 @@ class Question extends Component {
 						/>
 					</React.Fragment>
 				}
-			</div>
+			</li>
 		);
 	}
 }

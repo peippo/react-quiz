@@ -5,7 +5,7 @@ class QuestionList extends Component {
 
 	render() {
 		return (
-			<div>
+			<ol className = "quiz">
 				{
 					this.props.questions
 					.map((question) => (
@@ -22,7 +22,7 @@ class QuestionList extends Component {
 						/>
 					))
 				}
-			</div>
+			</ol>
 		);
 	}
 }
