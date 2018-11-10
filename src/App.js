@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import QuestionList from './components/QuestionList';
-import './App.css';
+import './styles.scss';
 
 const questions = require("./data.json");
 
