@@ -17,7 +17,7 @@ body {
 	margin-bottom: 10px;
 	border-radius: 3px;
 
-	&:hover:not(.question--active) {
+	&:hover:not(.question--active):not(.question--disabled) {
 		cursor: pointer;
 		background-color: darken($lightblue, 3%);
 	}
@@ -32,6 +32,12 @@ body {
 
 	.question__heading {
 		color: white;
+	}
+}
+
+.question--disabled {
+	.question__title {
+		color: darken($lightblue, 10%);
 	}
 }
 

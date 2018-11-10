@@ -5,10 +5,14 @@ class Question extends Component {
 	render() {
 		const isActiveQuestion = this.props.activeQuestion === this.props.questionId;
 		const isAnsweredQuestion = this.props.selectedAnswers[this.props.questionId] !== false
+		
+		let classes = "question question--disabled";
+		classes =  isAnsweredQuestion ? "question" : classes;
+		classes = isActiveQuestion || (isActiveQuestion && isAnsweredQuestion) ? "question question--active" : classes;
 
 		return (
 			<li 
-				className = {isActiveQuestion ? "question question--active" : "question"}
+				className = {classes}
 				onClick = {(event) => isAnsweredQuestion ?
 					this.props.handleQuestionChange(this.props.questionId, event) :
 					false
