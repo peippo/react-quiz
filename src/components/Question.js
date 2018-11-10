@@ -4,11 +4,15 @@ import AnswerList from './AnswerList';
 class Question extends Component {
 	render() {
 		const isActiveQuestion = this.props.activeQuestion === this.props.questionId;
-		
+		const isAnsweredQuestion = this.props.selectedAnswers[this.props.questionId] !== false
+
 		return (
 			<li 
 				className = {isActiveQuestion ? "question question--active" : "question"}
-				onClick = {(event) => this.props.handleQuestionChange(this.props.questionId, event)}
+				onClick = {(event) => isAnsweredQuestion ?
+					this.props.handleQuestionChange(this.props.questionId, event) :
+					false
+				}
 			>
 				<h2 className = "question__title">
 					{this.props.shortTitle}
