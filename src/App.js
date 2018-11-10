@@ -7,7 +7,7 @@ const questions = require("./data.json");
 class App extends Component {
 	state = {
 		questions: questions,
-		selectedAnswers: [0, 0, 0],
+		selectedAnswers: [0, 0, 0, 0, 0],
 		activeQuestion: 0
 	}
 
