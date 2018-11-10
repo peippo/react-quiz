@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import Question from './Question';
 
 class QuestionList extends Component {
-
 	render() {
+		const {
+			activeQuestion,
+			selectedAnswers,
+			handleQuestionChange,
+			handleAnswerChange
+		} = this.props;
+
 		return (
 			<ol className = "quiz">
 				{
@@ -15,10 +21,10 @@ class QuestionList extends Component {
 							questionId = {question.id}
 							answers = {question.answers}
 							key = {question.id}
-							activeQuestion = {this.props.activeQuestion}
-							selectedAnswers = {this.props.selectedAnswers}
-							handleQuestionChange = {this.props.handleQuestionChange}
-							handleAnswerChange = {this.props.handleAnswerChange}
+							activeQuestion = {activeQuestion}
+							selectedAnswers = {selectedAnswers}
+							handleQuestionChange = {handleQuestionChange}
+							handleAnswerChange = {handleAnswerChange}
 						/>
 					))
 				}

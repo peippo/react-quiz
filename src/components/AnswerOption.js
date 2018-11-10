@@ -2,22 +2,30 @@ import React, { Component } from 'react';
 
 class AnswerOption extends Component {
 	render() {
+		const {
+			answerId,
+			questionId,
+			selectedAnswers,
+			handleAnswerChange,
+			answerText
+		} = this.props;
+
 		return (
 			<div className="question__answer">
 				<input
 					className="question__input"
 					type = "radio"
-					value = {this.props.answerId}
-					id = {this.props.answerId}
-					name = {"question-" + this.props.questionId}
-					checked = {this.props.selectedAnswers[this.props.questionId] === this.props.answerId}
-					onChange = {(event) => this.props.handleAnswerChange(this.props.questionId, event)}
+					value = {answerId}
+					id = {answerId}
+					name = {"question-" + questionId}
+					checked = {selectedAnswers[questionId] === answerId}
+					onChange = {(event) => handleAnswerChange(questionId, event)}
 				/>
 				<label
 					className="question__label"
-					htmlFor = {this.props.answerId}
+					htmlFor = {answerId}
 				>
-					{this.props.answerText}
+					{answerText}
 				</label>
 			</div>
 		);

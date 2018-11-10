@@ -20,9 +20,9 @@ class App extends Component {
 	}
 
 	handleAnswerChange = (questionId, event) => {
-		const newAnswers = this.state.selectedAnswers.map((currentValue, index) => {
-			return index === questionId ? parseInt(event.target.value) : currentValue
-		});
+		const newAnswers = this.state.selectedAnswers.map((currentValue, index) =>
+			index === questionId ? parseInt(event.target.value) : currentValue
+		);
 
 		this.setState({
 			selectedAnswers: newAnswers
@@ -30,12 +30,18 @@ class App extends Component {
 	}
 
 	render() {
+		const {
+			questions,
+			selectedAnswers,
+			activeQuestion,
+		} = this.state;
+
 		return (
 			<React.Fragment>
 				<QuestionList
-					questions = {this.state.questions}
-					activeQuestion = {this.state.activeQuestion}
-					selectedAnswers = {this.state.selectedAnswers}
+					questions = {questions}
+					activeQuestion = {activeQuestion}
+					selectedAnswers = {selectedAnswers}
 					handleQuestionChange = {this.handleQuestionChange}
 					handleAnswerChange = {this.handleAnswerChange}
 				/>

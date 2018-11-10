@@ -3,8 +3,14 @@ import AnswerOption from './AnswerOption';
 import AnswerSubmit from './AnswerSubmit';
 
 class AnswerList extends Component {
-
 	render() {
+		const {
+			questionId,
+			selectedAnswers,
+			handleAnswerChange,
+			handleQuestionChange
+		} = this.props;
+		
 		return (
 			<form className = "question__answers">
 				{
@@ -14,16 +20,16 @@ class AnswerList extends Component {
 							answerText = {answer.answer}
 							answerId = {answer.id}
 							key = {answer.id}
-							questionId = {this.props.questionId}
-							selectedAnswers = {this.props.selectedAnswers}
-							handleAnswerChange = {this.props.handleAnswerChange}
+							questionId = {questionId}
+							selectedAnswers = {selectedAnswers}
+							handleAnswerChange = {handleAnswerChange}
 						/>
 					))
 				}
 				<AnswerSubmit
-					handleQuestionChange = {this.props.handleQuestionChange}
-					questionId = {this.props.questionId}
-					active = {this.props.selectedAnswers[this.props.questionId] !== false}
+					handleQuestionChange = {handleQuestionChange}
+					questionId = {questionId}
+					active = {selectedAnswers[questionId] !== false}
 				/>
 			</form>
 		);
