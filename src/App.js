@@ -7,7 +7,14 @@ const questions = require("./data.json");
 class App extends Component {
 	state = {
 		questions: questions,
-		selectedAnswers: [0, 0, 0]
+		selectedAnswers: [0, 0, 0],
+		activeQuestion: 0
+	}
+
+	handleQuestionChange = (questionId) => {
+		this.setState({
+			activeQuestion: questionId
+		});
 	}
 
 	handleAnswerChange = (questionId, event) => {
@@ -25,7 +32,9 @@ class App extends Component {
 			<React.Fragment>
 				<QuestionList
 					questions = {this.state.questions}
+					activeQuestion = {this.state.activeQuestion}
 					selectedAnswers = {this.state.selectedAnswers}
+					handleQuestionChange = {this.handleQuestionChange}
 					handleAnswerChange = {this.handleAnswerChange}
 				/>
 			</React.Fragment>
