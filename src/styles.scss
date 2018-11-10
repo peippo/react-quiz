@@ -78,3 +78,33 @@ body {
 		background-color: $cyan;
 	}
 }
+
+.question__submit {
+	align-self: flex-start;
+    border: none;
+    padding: .5rem 1rem;
+    margin: 1rem 0 0 0;
+	background-color: white;
+	color: $cyan;
+    font-size: 1rem;
+	border-radius: 3px;
+    transition: background-color, .25s; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+	&[disabled] {
+		background-color: lighten($blue, 15%);
+		color: lighten($blue, 25%);
+
+		&:hover {
+			background-color: lighten($blue, 15%);
+			cursor: not-allowed;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		background-color: rgba(white, 0.9);
+		cursor: pointer;
+	}
+}

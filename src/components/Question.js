@@ -8,7 +8,7 @@ class Question extends Component {
 		return (
 			<li 
 				className = {isActiveQuestion ? "question question--active" : "question"}
-				onClick = {() => this.props.handleQuestionChange(this.props.questionId)}
+				onClick = {(event) => this.props.handleQuestionChange(this.props.questionId, event)}
 			>
 				<h2 className = "question__title">
 					{this.props.shortTitle}
@@ -24,6 +24,7 @@ class Question extends Component {
 							questionId = {this.props.questionId}
 							selectedAnswers = {this.props.selectedAnswers}
 							handleAnswerChange = {this.props.handleAnswerChange}
+							handleQuestionChange = {this.props.handleQuestionChange}
 						/>
 					</React.Fragment>
 				}

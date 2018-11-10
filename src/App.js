@@ -7,13 +7,15 @@ const questions = require("./data.json");
 class App extends Component {
 	state = {
 		questions: questions,
-		selectedAnswers: [0, 0, 0, 0, 0],
+		selectedAnswers: [false, false, false, false, false],
 		activeQuestion: 0
 	}
 
-	handleQuestionChange = (questionId) => {
+	handleQuestionChange = (questionId, event) => {
+		const nextQuestionId = questionId >= this.state.questions.length ? questionId - 1 : questionId
+		event.stopPropagation();
 		this.setState({
-			activeQuestion: questionId
+			activeQuestion: nextQuestionId
 		});
 	}
 

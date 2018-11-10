@@ -15,7 +15,7 @@ class AnswerOption extends Component {
 				/>
 				<label
 					className="question__label"
-					for = {this.props.answerId}
+					htmlFor = {this.props.answerId}
 				>
 					{this.props.answerText}
 				</label>

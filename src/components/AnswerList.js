@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AnswerOption from './AnswerOption';
+import AnswerSubmit from './AnswerSubmit';
 
 class AnswerList extends Component {
 
@@ -19,6 +20,11 @@ class AnswerList extends Component {
 						/>
 					))
 				}
+				<AnswerSubmit
+					handleQuestionChange = {this.props.handleQuestionChange}
+					questionId = {this.props.questionId}
+					active = {this.props.selectedAnswers[this.props.questionId] !== false}
+				/>
 			</form>
 		);
 	}
