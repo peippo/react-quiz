@@ -1,6 +1,7 @@
 $cyan: #00a5ce;
 $blue: #374998;
 $lightblue: #ebecf4;
+$green: #74ce00;
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
@@ -57,11 +58,11 @@ body {
 	}
 
 	.question__status {
-		background-color: $cyan;
+		background-color: darken($blue, 20%);
 	
 		&:before,
 		&:after {
-			background-color: $cyan;
+			background-color: darken($blue, 20%);
 		}
 	}
 }
@@ -227,9 +228,10 @@ body {
 
 .question__status {
 	position: relative;
-	margin-top: .2rem;
+	margin-top: .33rem;
 	width: 18px;
 	height: 18px;
+	min-width: 18px;
 	background-color: $blue;
 	border-radius: 50%;
 	z-index: 1;
@@ -261,7 +263,7 @@ body {
 .question__answered {
 	position: relative;
 	background-color: $green;
-	background: linear-gradient(to top, $green, $green 50%, lighten($green, 20%) 80%, white);
+	background: linear-gradient(to top, $green, $green 50%, lighten($green, 5%) 80%, lighten($green, 10%));
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
