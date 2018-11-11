@@ -9,7 +9,7 @@ const QuestionList = ({
 	handleAnswerChange
 }) => {
 	return (
-		<ol className="quiz">
+		<ol className="questions">
 			{questions.map(question => (
 				<Question
 					shortTitle={question.shortTitle}
