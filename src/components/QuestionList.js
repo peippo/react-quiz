@@ -18,6 +18,7 @@ const QuestionList = ({
 					questionId={question.id}
 					answers={question.answers}
 					key={question.id}
+					totalQuestions={questions.length}
 					activeQuestion={activeQuestion}
 					selectedAnswers={selectedAnswers}
 					handleQuestionChange={handleQuestionChange}

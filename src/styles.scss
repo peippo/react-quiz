@@ -17,6 +17,7 @@ body {
 }
 
 .question {
+	position: relative;
 	display: flex;
 	background-color: $lightblue;
 	padding: 1rem 3rem 1rem 1rem;
@@ -54,6 +55,10 @@ body {
 	}
 
 	.question__heading {
+		color: white;
+	}
+
+	.question__number {
 		color: white;
 	}
 
@@ -104,6 +109,21 @@ body {
 	margin: 0;
 	text-transform: uppercase;
 	color: $blue;
+	display: inline-block;
+}
+
+.question__number {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	color: darken($lightblue, 15%);
+}
+
+.question__total {
+	&:before {
+		content: '/';
+		margin-right: .25rem;
+	}
 }
 
 .question__content {

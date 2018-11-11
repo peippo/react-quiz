@@ -2,6 +2,7 @@ import React from "react";
 import AnswerList from "./AnswerList";
 import StatusIndicator from "./StatusIndicator";
 import QuestionDescription from "./QuestionDescription";
+import QuestionNumber from "./QuestionNumber";
 
 const Question = ({
 	activeQuestion,
@@ -11,6 +12,7 @@ const Question = ({
 	questionText,
 	questionDescription,
 	answers,
+	totalQuestions,
 	handleAnswerChange,
 	handleQuestionChange
 }) => {
@@ -40,6 +42,7 @@ const Question = ({
 			<StatusIndicator answered={isAnsweredQuestion} />
 			<div className="question__block">
 				<h2 className="question__title">{shortTitle}</h2>
+				<QuestionNumber questionNumber={questionId + 1} totalQuestions={totalQuestions}/>
 				{isActiveQuestion && (
 					<div className="question__content">
 						<h3 className="question__heading">{questionText}</h3>
