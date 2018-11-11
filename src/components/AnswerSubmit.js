@@ -6,7 +6,7 @@ const AnswerSubmit = ({ active, handleQuestionChange, questionId }) => {
 			disabled={!active}
 			className="question__submit"
 			type="button"
-			value="Seuraava"
+			value="Next"
 			onClick={event => handleQuestionChange(questionId + 1, event)}
 		/>
 	);
