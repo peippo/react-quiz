@@ -14,6 +14,7 @@ const QuestionList = ({
 				<Question
 					shortTitle={question.shortTitle}
 					questionText={question.question}
+					questionDescription={question.description}
 					questionId={question.id}
 					answers={question.answers}
 					key={question.id}

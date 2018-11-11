@@ -24,7 +24,8 @@
 				"answer": "Jupiter",
 				"points": 1
 			}
-		]
+		],
+		"description": "The Solar System is the gravitationally bound system of the Sun and the objects that orbit it, either directly or indirectly, including the eight planets and five dwarf planets as defined by the International Astronomical Union (IAU). Of the objects that orbit the Sun directly, the largest eight are the planets."
 	},
 	{
 		"id": 1,
@@ -51,7 +52,8 @@
 				"answer": "Quantum of Solace",
 				"points": 0
 			}
-		]
+		],
+		"description": "James Bond is a fictional character created by novelist Ian Fleming in 1953. Bond is a British secret agent working for MI6 who also answers to his codename, 007. He has been portrayed on film in twenty-six productions."
 	},
 	{
 		"id": 2,
@@ -78,7 +80,8 @@
 				"answer": "Shinto",
 				"points": 0
 			}
-		]
+		],
+		"description": "Religion may be defined as a cultural system of designated behaviors and practices, worldviews, texts, sanctified places, prophecies, ethics, or organizations, that relates humanity to supernatural, transcendental, or spiritual elements. However, there is no scholarly consensus over what precisely constitutes a religion."
 	},
 	{
 		"id": 3,
@@ -105,7 +108,8 @@
 				"answer": "Ataris",
 				"points": 0
 			}
-		]
+		],
+		"description": "Lionel Brockman Richie Jr. (born June 20, 1949) is an American singer, songwriter, actor and record producer. Richie has sold over 90 million records worldwide, making him one of the world's best-selling artists of all time. He is also a five-time Grammy Award winner."
 	},
 	{
 		"id": 4,
@@ -132,6 +136,7 @@
 				"answer": "China",
 				"points": 1
 			}
-		]
+		],
+		"description": "A time zone is a region of the globe that observes a uniform standard time for legal, commercial, and social purposes. Time zones tend to follow the boundaries of countries and their subdivisions because it is convenient for areas in close commercial or other communication to keep the same time."
 	}
 ]

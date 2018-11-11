@@ -4,17 +4,21 @@ $lightblue: #ebecf4;
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 1.4;
+	margin: 2rem 1rem;
 }
 
 .quiz {
 	list-style-type: none;
 	padding: 0;
+	margin: 0 auto;
+	max-width: 960px;
 }
 
 .question {
 	display: flex;
 	background-color: $lightblue;
-	padding: 1rem;
+	padding: 1rem 3rem 1rem 1rem;
 	margin-bottom: 10px;
 	border-radius: 3px;
 	overflow: hidden;
@@ -63,8 +67,13 @@ body {
 }
 
 .question--disabled {
+	&:hover {
+		cursor: not-allowed;
+	}
+
 	.question__title {
 		color: darken($lightblue, 10%);
+		user-select: none;
 	}
 
 	.question__status {
@@ -96,16 +105,69 @@ body {
 	color: $blue;
 }
 
+.question__content {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	
+	@media (min-width: 720px) {
+		flex-direction: row;
+	}
+}
+
 .question__heading {
 	font-size: 1.5rem;
 	margin: .5rem 0 .75rem 0;
 	color: $cyan;
+	flex-basis: 100%;
 }
 
 .question__answers {
 	color: white;
 	display: flex;
 	flex-direction: column;
+	flex: 1;
+	margin-bottom: 1rem;
+}
+
+.question__description {
+	position: relative;
+	margin-top: 1rem;
+	max-width: 640px;
+	color: white;
+	flex: 2;
+	border-top: 1px solid darken($blue, 20%);
+	padding: 20px .33rem 0 .33rem;
+	line-height: 1.5;
+	
+	@media (min-width: 720px) {
+		margin-top: 0;
+		border-top: 0;
+		border-left: 1px solid darken($blue, 20%);
+		padding: .5rem 0 .5rem 20px;
+		align-self: flex-start;
+	}
+
+	&:before {
+		content: 'i';
+		font-weight: 700;
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		top: calc(-20px + 10px);
+		right: 10px;
+		background-color: darken($blue, 20%);
+		color: $cyan;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (min-width: 720px) {
+			top: 10px;
+			left: calc(-20px + 10px);
+		}
+	}
 }
 
 .question__label {
@@ -196,9 +258,12 @@ body {
 	}
 }
 
-.question__saved {
+.question__answered {
 	position: relative;
-	color: white;
-	font-size: 12px;
+	background-color: $green;
+	background: linear-gradient(to top, $green, $green 50%, lighten($green, 20%) 80%, white);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
 	z-index: 1;
 }

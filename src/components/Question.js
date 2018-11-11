@@ -1,6 +1,7 @@
 import React from "react";
 import AnswerList from "./AnswerList";
 import StatusIndicator from "./StatusIndicator";
+import QuestionDescription from "./QuestionDescription";
 
 const Question = ({
 	activeQuestion,
@@ -8,6 +9,7 @@ const Question = ({
 	questionId,
 	shortTitle,
 	questionText,
+	questionDescription,
 	answers,
 	handleAnswerChange,
 	handleQuestionChange
@@ -47,6 +49,9 @@ const Question = ({
 							selectedAnswers={selectedAnswers}
 							handleAnswerChange={handleAnswerChange}
 							handleQuestionChange={handleQuestionChange}
+						/>
+						<QuestionDescription
+							questionDescription={questionDescription}
 						/>
 					</div>
 				)}
