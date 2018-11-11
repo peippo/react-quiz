@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AnswerList from './AnswerList';
+import StatusIndicator from './StatusIndicator';
 
 class Question extends Component {
 	render() {
@@ -16,37 +17,46 @@ class Question extends Component {
 
 		const isActiveQuestion = activeQuestion === questionId;
 		const isAnsweredQuestion = selectedAnswers[questionId] !== false
+		const isNextQuestion = selectedAnswers[questionId] === false &&
+			selectedAnswers[questionId - 1] !== false &&
+			questionId + 1 !== activeQuestion
 		
 		let classes = "question question--disabled";
 		classes =  isAnsweredQuestion ? "question" : classes;
+		classes =  isNextQuestion ? "question question--next" : classes;
 		classes = isActiveQuestion || (isActiveQuestion && isAnsweredQuestion) ? "question question--active" : classes;
 
 		return (
 			<li 
 				className = {classes}
-				onClick = {(event) => isAnsweredQuestion ?
+				onClick = {(event) => isAnsweredQuestion || isNextQuestion ?
 					handleQuestionChange(questionId, event) :
 					false
 				}
 			>
-				<h2 className = "question__title">
-					{shortTitle}
-				</h2>
-				{
-					isActiveQuestion &&
-					<React.Fragment>
-						<h3 className = "question__heading">
-							{questionText}
-						</h3>
-						<AnswerList
-							answers = {answers}
-							questionId = {questionId}
-							selectedAnswers = {selectedAnswers}
-							handleAnswerChange = {handleAnswerChange}
-							handleQuestionChange = {handleQuestionChange}
-						/>
-					</React.Fragment>
-				}
+				<StatusIndicator
+					answered = {isAnsweredQuestion}
+				/>
+				<div className="question__block">
+					<h2 className = "question__title">
+						{shortTitle}
+					</h2>
+					{
+						isActiveQuestion &&
+						<div className="question__content">
+							<h3 className = "question__heading">
+								{questionText}
+							</h3>
+							<AnswerList
+								answers = {answers}
+								questionId = {questionId}
+								selectedAnswers = {selectedAnswers}
+								handleAnswerChange = {handleAnswerChange}
+								handleQuestionChange = {handleQuestionChange}
+							/>
+						</div>
+					}
+				</div>
 			</li>
 		);
 	}

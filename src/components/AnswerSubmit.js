@@ -12,7 +12,7 @@ const AnswerSubmit = props => {
 			disabled = {!active}
 			className = "question__submit"
 			type = "button"
-			value = "Tallenna"
+			value = "Seuraava"
 			onClick = {(event) => handleQuestionChange(questionId + 1, event)}	
 		/>
 	)

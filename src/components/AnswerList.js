@@ -10,6 +10,8 @@ class AnswerList extends Component {
 			handleAnswerChange,
 			handleQuestionChange
 		} = this.props;
+
+		const isLastQuestion = selectedAnswers.length === questionId + 1;
 		
 		return (
 			<form className = "question__answers">
@@ -26,11 +28,14 @@ class AnswerList extends Component {
 						/>
 					))
 				}
-				<AnswerSubmit
-					handleQuestionChange = {handleQuestionChange}
-					questionId = {questionId}
-					active = {selectedAnswers[questionId] !== false}
-				/>
+				{
+					!isLastQuestion &&
+					<AnswerSubmit
+						handleQuestionChange = {handleQuestionChange}
+						questionId = {questionId}
+						active = {selectedAnswers[questionId] !== false}
+					/>
+				}
 			</form>
 		);
 	}
