@@ -8,7 +8,7 @@ const AnswerOption = ({
 	answerText
 }) => {
 	return (
-		<div className="question__answer">
+		<React.Fragment>
 			<input
 				className="question__input"
 				type="radio"
@@ -21,7 +21,7 @@ const AnswerOption = ({
 			<label className="question__label" htmlFor={answerId}>
 				{answerText}
 			</label>
-		</div>
+		</React.Fragment>
 	);
 };
 

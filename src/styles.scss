@@ -178,6 +178,10 @@ body {
 	border-radius: 3px;
 	margin-bottom: 5px;
 	transition: background-color, .3s;
+	
+	@media (min-width: 720px) {
+		margin-right: 2rem;
+	}
 
 	&:hover {
 		cursor: pointer;
@@ -191,7 +195,7 @@ body {
 	width: 0;
 	height: 0;
 
-	&:checked ~ .question__label {
+	&:checked + .question__label {
 		background-color: $cyan;
 	}
 }
