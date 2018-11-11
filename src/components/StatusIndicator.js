@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react";
 
-const StatusIndicator = props => (
+const StatusIndicator = ({ answered }) => (
 	<div className="question__status">
-		{
-			props.answered &&
-			<span className="question__saved">&#10003;</span>
-		}
+		{answered && <span className="question__saved">&#10003;</span>}
 	</div>
 );
 
