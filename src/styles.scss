@@ -67,7 +67,7 @@ body {
 
 	.question__status {
 		background-color: darken($blue, 20%);
-	
+
 		&:before,
 		&:after {
 			background-color: darken($blue, 20%);
@@ -87,7 +87,7 @@ body {
 
 	.question__status {
 		background-color: darken($lightblue, 10%);
-	
+
 		&:before,
 		&:after {
 			background-color: darken($lightblue, 10%);
@@ -133,7 +133,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	
+
 	@media (min-width: 720px) {
 		flex-direction: row;
 	}
@@ -163,7 +163,7 @@ body {
 	border-top: 1px solid darken($blue, 20%);
 	padding: 20px .33rem 0 .33rem;
 	line-height: 1.5;
-	
+
 	@media (min-width: 720px) {
 		margin-top: 0;
 		border-top: 0;
@@ -201,7 +201,7 @@ body {
 	border-radius: 3px;
 	margin-bottom: 5px;
 	transition: background-color, .3s;
-	
+
 	@media (min-width: 720px) {
 		margin-right: 2rem;
 	}
@@ -225,16 +225,16 @@ body {
 
 .question__submit {
 	align-self: flex-start;
-    border: none;
-    padding: .5rem 1rem;
-    margin: 1rem 0 0 0;
+   border: none;
+   padding: .5rem 1rem;
+   margin: 1rem 0 0 0;
 	background-color: white;
 	color: $cyan;
-    font-size: 1rem;
+   font-size: 1rem;
 	border-radius: 3px;
-    transition: background-color, .25s; 
-    -webkit-appearance: none;
-    -moz-appearance: none;
+   transition: background-color, .25s;
+   -webkit-appearance: none;
+   -moz-appearance: none;
 
 	&[disabled] {
 		background-color: lighten($blue, 15%);
@@ -302,10 +302,6 @@ body {
 	align-items: center;
 	flex-direction: column;
 	margin-top: 2rem;
-
-	@media (min-width: 720px) {
-		flex-direction: row;
-	}
 }
 
 .results__score {
@@ -319,23 +315,23 @@ body {
 	min-width: 150px;
 	min-height: 150px;
 	border-radius: 50%;
-	
+
 	span {
 		line-height: 1;
 	}
-	
+
 	span:first-child {
 		font-weight: 700;
 		font-size: 7rem;
 		color: white;
 		margin-top: -2rem;
 	}
-	
+
 	span:last-child {
 		font-size: 1.2rem;
 		color: rgba(white, 0.75);
 	}
-	
+
 	@media (min-width: 720px) {
 		padding: 2rem;
 		margin-right: 2rem;
@@ -345,7 +341,7 @@ body {
 		span:first-child {
 			font-size: 10rem;
 		}
-		
+
 		span:last-child {
 			font-size: 1.75rem;
 		}
@@ -357,8 +353,27 @@ body {
 	font-size: 2rem;
 	color: $cyan;
 	line-height: 0.9;
-	
+
 	@media (min-width: 720px) {
 		font-size: 4rem;
+	}
+}
+
+.results__reset {
+   border: none;
+   padding: .5rem 1rem;
+   margin: 1rem 0 0 0;
+	background-color: $blue;
+	color: white;
+   font-size: 1rem;
+	border-radius: 3px;
+   transition: background-color, .25s;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+
+	&:hover,
+	&:focus {
+		background-color: rgba($blue, 0.9);
+		cursor: pointer;
 	}
 }
